@@ -17,9 +17,10 @@ pipeline {
         stage('Build App') {
             steps {
                 echo "Building main app..."
-                bat 'go build -o bin\\myapp.exe cmd\\myapp'
-            }
-        }
+                bat 'go build -o bin\\myapp.exe ./cmd/myapp'
+    }
+}
+
 
         stage('Build Test Client') {
             when {
